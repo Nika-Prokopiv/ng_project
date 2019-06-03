@@ -1,0 +1,46 @@
+<div class="card">
+  <div class="card-header bordered">
+    <div class="header-block">
+      <h3 class="title">Добавить категорию</h3>
+    </div>
+  </div>
+  <div class="card-block">
+    <form #form="ngForm" (ngSubmit)="postForm(form)">
+      <div class="form-group" [ngClass]="{'has-error': name.touched && name.invalid}">
+        <label class="control-label" for="category-name">Введите название</label>
+        <input type="text"
+               id="category-name"
+               class="form-control"
+               #name="ngModel"
+               name="name"
+               ngModel
+               required
+        >
+        <div *ngIf="name.touched && name.invalid"
+              class="form-help-text">Валидация</div>
+      </div>
+      <div class="form-group" [ngClass]="{'has-error': capacity.touched && capacity.invalid}">
+        <label class="control-label" for="category-value">Введите лимит</label>
+        <input type="number"
+               id="category-value"
+               class="form-control"
+               #capacity="ngModel"
+               name="capacity"
+               min="1"
+               ngModel
+               required
+        >
+        <div *ngIf="capacity.touched && capacity.invalid"
+              class="form-help-text">
+          <span *ngIf="capacity.errors['required']">Валидация required</span>
+          <span *ngIf="capacity.errors['min']">Валидация min</span>
+
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary"
+              [disabled]="form.invalid"
+      >Добавить
+      </button>
+    </form>
+  </div>
+</div>

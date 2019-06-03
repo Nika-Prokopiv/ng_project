@@ -1,0 +1,20 @@
+<div class="title-block">
+  <h3 class="title pull-left">
+    Страница счета <span class="sparkline bar"></span>
+  </h3>
+  <div class="pull-right">
+    <button class="btn-sm btn btn-primary-outline" (click)="refreshData()">
+      <i class="fa fa-refresh"></i>
+    </button>
+  </div>
+</div>
+<section class="section">
+  <div class="row" *ngIf="!isLoaded">
+    Loading...
+  </div>
+
+  <div class="row" *ngIf="isLoaded">
+    <hm-bill-card [billData]="bill"></hm-bill-card>
+    <hm-currency-card [currencies]="currency"></hm-currency-card>
+  </div>
+</section>

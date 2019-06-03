@@ -1,0 +1,15 @@
+<div class="title-block">
+  <h3 class="title">
+    Страница истории <span class="sparkline bar"></span>
+  </h3>
+</div>
+<div *ngIf="!isLoaded">Loading...</div>
+<div *ngIf="isLoaded">
+  <hm-history-chart [data]="chartData"></hm-history-chart>
+  <hm-history-events
+    [events]="records"
+    [categories]="categories">
+  </hm-history-events>
+  <hm-histrory-filter></hm-histrory-filter>
+</div>
+

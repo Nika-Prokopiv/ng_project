@@ -1,0 +1,69 @@
+<p class="text-xs-center">Регистрация для получения доступа</p>
+<form [formGroup]="form" (ngSubmit)="postForm()">
+  <div class="form-group" [ngClass]="{'has-error': form.get('email').touched && form.get('email').invalid}">
+    <label for="email">Email</label>
+    <input
+      type="text"
+      class="form-control underlined"
+      id="email"
+      formControlName="email"
+      placeholder="Введите email"
+    >
+    <div class="form-help-text" *ngIf="form.get('email').touched && form.get('email').invalid">
+      <span *ngIf="form.get('email')['errors']['required']">Обязательное поле</span>
+      <span *ngIf="form.get('email')['errors']['email']">В этом поле ошибка</span>
+      <span *ngIf="form.get('email')['errors']['forbiddenEmail']">Такой емейл уже зарегистрирован</span>
+    </div>
+  </div>
+  <div class="form-group" [ngClass]="{'has-error': form.get('password').touched && form.get('password').invalid}">
+    <label for="password">Пароль</label>
+    <input
+      type="password"
+      class="form-control underlined"
+      id="password"
+      formControlName="password"
+      placeholder="Введите пароль"
+    >
+    <div class="form-help-text" *ngIf="form.get('password').touched && form.get('password').invalid">
+      <span *ngIf="form.get('password')['errors']['required']">Обязательное поле</span>
+      <span *ngIf="form.get('password')['errors']['minlength'] &&
+       form.get('password')['errors']['minlength']['requiredLength']">Пароль не менее
+        {{form.get('password')['errors']['minlength']['requiredLength']}} символов</span>
+    </div>
+  </div>
+  <div class="form-group" [ngClass]="{'has-error': form.get('name').touched && form.get('name').invalid}">
+    <label for="name">Имя</label>
+    <input
+      type="text"
+      class="form-control underlined"
+      id="name"
+      formControlName="name"
+      placeholder="Введите имя"
+    >
+    <div class="form-help-text" *ngIf="form.get('name').touched && form.get('name').invalid">
+      <span *ngIf="form.get('name')['errors']['required']">Обязательное поле</span>
+    </div>
+  </div>
+  <div class="form-group" [ngClass]="{'has-error': form.get('agree').touched && form.get('agree').value === false}">
+    <label for="agree">
+      <input class="checkbox" id="agree" type="checkbox" formControlName="agree">
+      <span>Согласен с правилами</span>
+    </label>
+    <div class="form-help-text" *ngIf="form.get('agree').touched && form.get('agree').value === false">
+      <span>Обязательно</span>
+    </div>
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-block btn-primary"
+            [disabled]="form.invalid">Зарегистрироваться
+    </button>
+  </div>
+  <div class="form-group">
+    <p class="text-muted text-xs-center">
+      Уже есть аккаунт?
+      <a routerLink="/login">
+        Войти!
+      </a>
+    </p>
+  </div>
+</form>

@@ -1,0 +1,54 @@
+<div class="card">
+  <div class="card-header bordered">
+    <div class="header-block">
+      <h3 class="title">Редактировать категорию</h3>
+    </div>
+  </div>
+  <div class="card-block">
+    <span class="alert alert-{{message.type}}" style="padding: 5px;" *ngIf="message.text">{{message.text}}</span>
+    <form #form="ngForm" (ngSubmit)="postForm(form)">
+      <div class="form-group">
+        <label class="control-label" for="edit-category">Выберите категорию</label>
+        <select class="form-control"
+                id="edit-category"
+                name="category"
+                (change)="onCategoryChange()"
+                [(ngModel)]="currentCategoryId">
+          <option *ngFor="let c of categories"
+                  [value]="c.id"
+          >{{c.name}}</option>
+        </select>
+      </div>
+      <div class="form-group" [ngClass]="{'has-error': name.touched && name.invalid}">
+        <label class="control-label" for="edit-category-name">Введите название</label>
+        <input type="text"
+               id="edit-category-name"
+               class="form-control"
+               #name="ngModel"
+               name="name"
+               [ngModel]="currentCategory.name"
+               required
+        >
+        <span *ngIf="name.touched && name.invalid"
+              class="form-help-text">Валидация</span>
+      </div>
+      <div class="form-group" [ngClass]="{'has-error': capacity.touched && capacity.invalid}">
+        <label class="control-label" for="edit-category-value">Введите лимит</label>
+        <input type="number"
+               id="edit-category-value"
+               class="form-control"
+               #capacity="ngModel"
+               name="capacity"
+               [ngModel]="currentCategory.capacity"
+               required
+        >
+        <span *ngIf="capacity.touched && capacity.invalid"
+              class="form-help-text">Валидация</span>
+      </div>
+      <button type="submit" class="btn btn-primary"
+              [disabled]="form.invalid"
+      >Редактировать
+      </button>
+    </form>
+  </div>
+</div>
