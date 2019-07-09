@@ -70,9 +70,7 @@ export class HistoryPageComponent implements OnInit, OnDestroy {
   onFilterApply(filterParams) {
     this.toggleFilter(false);
     this.setInitialRecords();
-    // const startPeriod = moment().startOf('month');
     const startPeriod = moment().startOf(filterParams.period).startOf('day');
-    // const endPeriod = moment().endOf('year');
     const endPeriod = moment().endOf(filterParams.period).endOf('day');
     console.log(filterParams);
     console.log(this.filteredRecords);

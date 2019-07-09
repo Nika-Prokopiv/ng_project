@@ -44,6 +44,9 @@ export class LoginComponent implements OnInit {
         if (params.has('canLogIn')) {
           const msg = new Message('success', 'Log in now!');
           this.showMessage(msg);
+        } else if (params.has('accessDenied')) {
+          const msg = new Message('warning', 'Access denied, log in!');
+          this.showMessage(msg);
         }
       }
     );
