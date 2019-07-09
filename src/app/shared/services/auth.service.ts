@@ -4,7 +4,7 @@ import {Injectable} from '@angular/core';
 
 export class AuthService {
 
-  private isAuthenticated = false;
+  private isAuthenticated = true;
 
   constructor() {
   }
@@ -19,6 +19,7 @@ export class AuthService {
   }
 
   isLoggedIn(): boolean {
+    console.log('logged in ', this.isAuthenticated);
     return this.isAuthenticated;
   }
 }
