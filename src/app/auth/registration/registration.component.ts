@@ -5,6 +5,7 @@ import {Router} from '@angular/router';
 import {UsersService} from '../../shared/services/users.service';
 import {User} from '../../shared/models/user.model';
 import {Message} from '../../shared/models/message.model';
+import {Meta, Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'hm-registration',
@@ -17,7 +18,14 @@ export class RegistrationComponent implements OnInit {
   emailExists: boolean;
 
   constructor(private userService: UsersService,
+              private title: Title,
+              private meta: Meta,
               private router: Router) {
+    title.setTitle('Registration page');
+    meta.addTags([
+      {name: 'keys', content: 'registration, register, system, user'},
+      {name: 'description', content: 'Registration page'},
+    ]);
   }
 
   ngOnInit() {
