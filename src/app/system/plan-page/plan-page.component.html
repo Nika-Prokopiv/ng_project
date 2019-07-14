@@ -3,7 +3,9 @@
     Страница планирования <span class="sparkline bar"></span>
   </h3>
 </div>
-<section class="section" *ngIf="!isLoaded">Loading...</section>
+<section class="section" *ngIf="!isLoaded">
+  <hm-loader></hm-loader>
+</section>
 
 <section class="section" *ngIf="isLoaded">
   <div class="row">
@@ -32,7 +34,9 @@
                 из
                 <span class="text-primary">{{c.capacity | number: '1.2'}}</span>
                 |
-                осталось <span class="text-{{getCatColorClass(c)}}">{{c.capacity - getCategoryCost(c) | number: '1.2'}}0</span> (грн.)
+                осталось <span
+                class="text-{{getCatColorClass(c)}}">{{c.capacity - getCategoryCost(c) | number: '1.2'}}0</span>
+                (грн.)
               </p>
             </div>
           </div>

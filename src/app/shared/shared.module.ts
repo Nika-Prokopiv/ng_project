@@ -1,8 +1,9 @@
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {LoaderComponent} from './loader/loader.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [LoaderComponent],
   imports: [
     FormsModule,
     ReactiveFormsModule
@@ -10,6 +11,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
   exports: [
     FormsModule,
     ReactiveFormsModule,
+    LoaderComponent,
   ]
 })
 
