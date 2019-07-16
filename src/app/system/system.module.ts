@@ -23,6 +23,7 @@ import { HistoryEventsComponent } from './history-page/history-events/history-ev
 import { HistoryDetailComponent } from './history-page/history-detail/history-detail.component';
 import { FilterPipe } from './shared/pipes/filter.pipe';
 import {HistoryFilterComponent} from './history-page/history-filter/history-filter.component';
+import { AnimationsPageComponent } from './animations-page/animations-page.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import {HistoryFilterComponent} from './history-page/history-filter/history-filt
     HistoryEventsComponent,
     HistoryDetailComponent,
     HistoryFilterComponent,
-    FilterPipe
+    FilterPipe,
+    AnimationsPageComponent
   ],
   imports: [
     CommonModule,

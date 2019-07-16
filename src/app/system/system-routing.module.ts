@@ -7,6 +7,7 @@ import {RecordsPageComponent} from './records-page/records-page.component';
 import {PlanPageComponent} from './plan-page/plan-page.component';
 import {HistoryDetailComponent} from './history-page/history-detail/history-detail.component';
 import {AuthGuard} from '../shared/services/auth.guard';
+import {AnimationsPageComponent} from './animations-page/animations-page.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,7 @@ const routes: Routes = [
       {path: 'bill', component: BillPageComponent},
       {path: 'history', component: HistoryPageComponent},
       {path: 'plan', component: PlanPageComponent},
+      {path: 'animations', component: AnimationsPageComponent},
       {path: 'records', component: RecordsPageComponent},
       {path: 'history/:id', component: HistoryDetailComponent}
     ]

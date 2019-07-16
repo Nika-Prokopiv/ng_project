@@ -1,0 +1,11 @@
+<button class="btn btn-primary-outline" (click)="isVisible = !isVisible">Change</button>
+<hr>
+<div class="alert-danger"
+     *ngIf="isVisible"
+     (@divTrigger.start)="onAnimationStart($event)"
+     (@divTrigger.done)="onAnimationEnd($event)"
+     @divTrigger>Some text
+</div>
+<hr>
+<!--<div style="width: 100px; height: 100px; background-color: skyblue" [@changeWidth]="isVisible ? 'a' : 'b'">-->
+<!--</div>-->
