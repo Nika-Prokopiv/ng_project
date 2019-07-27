@@ -43,7 +43,7 @@
             <tr *ngFor="let e of events | hmFilter: searchValue : searchFiled; let i = index">
               <th scope="row">{{i + 1}}</th>
               <td>{{e.amount | number: '1.2'}}</td>
-              <td>{{e.date | hmMoment: 'DD.MM.YYYY HH:mm:ss'}}</td>
+              <td>{{e.date | date: 'dd.MM.yyyy'}}</td>
               <td>{{e.catName}}</td>
               <td>
                 <span class="label label-success"

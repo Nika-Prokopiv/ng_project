@@ -21,8 +21,9 @@ import { EditCategoryComponent } from './records-page/edit-category/edit-categor
 import { HistoryChartComponent } from './history-page/history-chart/history-chart.component';
 import { HistoryEventsComponent } from './history-page/history-events/history-events.component';
 import { HistoryDetailComponent } from './history-page/history-detail/history-detail.component';
-import { HistroryFilterComponent } from './history-page/histrory-filter/histrory-filter.component';
 import { FilterPipe } from './shared/pipes/filter.pipe';
+import {HistoryFilterComponent} from './history-page/history-filter/history-filter.component';
+import { AnimationsPageComponent } from './animations-page/animations-page.component';
 
 @NgModule({
   declarations: [
@@ -43,8 +44,9 @@ import { FilterPipe } from './shared/pipes/filter.pipe';
     HistoryChartComponent,
     HistoryEventsComponent,
     HistoryDetailComponent,
-    HistroryFilterComponent,
-    FilterPipe
+    HistoryFilterComponent,
+    FilterPipe,
+    AnimationsPageComponent
   ],
   imports: [
     CommonModule,

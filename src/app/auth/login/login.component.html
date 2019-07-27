@@ -1,5 +1,5 @@
 <p class="text-xs-center">Войдите для работы</p>
-<div class="alert">{{message.text}}</div>
+<div class="alert" @fade>{{message.text}}</div>
 <form [formGroup]="form" (ngSubmit)="postForm()">
   <div class="form-group" [ngClass]="{'has-error': form.get('email').touched && form.get('email').invalid}">
     <label for="email">Email</label>

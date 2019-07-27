@@ -1,15 +1,30 @@
 <div class="title-block">
-  <h3 class="title">
+  <h3 class="title pull-left">
     Страница истории <span class="sparkline bar"></span>
   </h3>
+  <div class="pull-right">
+    <button class="btn-sm btn btn-primary-outline" (click)="openFilter()">
+      <i class="fa fa-filter"></i>
+    </button>
+  </div>
 </div>
-<div *ngIf="!isLoaded">Loading...</div>
+<div *ngIf="!isLoaded">
+  <hm-loader></hm-loader>
+</div>
 <div *ngIf="isLoaded">
   <hm-history-chart [data]="chartData"></hm-history-chart>
   <hm-history-events
-    [events]="records"
+    [events]="filteredRecords"
     [categories]="categories">
   </hm-history-events>
-  <hm-histrory-filter></hm-histrory-filter>
+
+  <div *ngIf="isFilterShown">
+    <hm-history-filter
+      [categories]="categories"
+      (applyFilter)="onFilterApply($event)"
+      (cancelFilter)="onFilterCancel($event)"></hm-history-filter>
+  </div>
+
+
 </div>
 

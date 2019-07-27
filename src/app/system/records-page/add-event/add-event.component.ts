@@ -43,7 +43,7 @@ export class AddEventComponent implements OnInit {
     if (amount < 0) {
       return amount *= -1;
     }
-    this.event = {type: type, amount: amount, category: +category, date: moment().format('DD.MM.YYYY HH:mm:ss'), description: description};
+    this.event = {type: type, amount: amount, category: +category, date: new Date(), description: description};
     console.log(this.event);
 
     this.billService.getBill().subscribe(

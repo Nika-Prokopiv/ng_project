@@ -6,12 +6,15 @@ import {UsersService} from '../../shared/services/users.service';
 import {User} from '../../shared/models/user.model';
 import {Message} from '../../shared/models/message.model';
 import {AuthService} from '../../shared/services/auth.service';
+import {fadeStateTrigger} from '../../shared/animations/fade.animation';
+import {Meta, Title} from '@angular/platform-browser';
 
 
 @Component({
   selector: 'hm-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
+  animations: [fadeStateTrigger]
 })
 export class LoginComponent implements OnInit {
 
@@ -25,8 +28,15 @@ export class LoginComponent implements OnInit {
     private userService: UsersService,
     private authService: AuthService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private title: Title,
+    private meta: Meta
   ) {
+    title.setTitle('Log-in page');
+    meta.addTags([
+      {name: 'keys', content: 'login,log-in, system, enter'},
+      {name: 'description', content: 'Log-in page'},
+    ]);
   }
 
   ngOnInit() {
@@ -43,6 +53,9 @@ export class LoginComponent implements OnInit {
       (params: ParamMap) => {
         if (params.has('canLogIn')) {
           const msg = new Message('success', 'Log in now!');
+          this.showMessage(msg);
+        } else if (params.has('accessDenied')) {
+          const msg = new Message('warning', 'Access denied, log in!');
           this.showMessage(msg);
         }
       }

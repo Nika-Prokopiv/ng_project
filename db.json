@@ -8,7 +8,7 @@
     }
   ],
   "bill": {
-    "value": 6767,
+    "value": 4912,
     "currency": "RUB"
   },
   "categories": [
@@ -43,7 +43,7 @@
       "type": "outcome",
       "amount": 500,
       "category": 2,
-      "date": "30.05.2019 16:47:41",
+      "date": "2019-07-02T11:12:25.501Z",
       "description": "продукты в атб",
       "id": 1
     },
@@ -51,7 +51,7 @@
       "type": "outcome",
       "amount": 890,
       "category": 3,
-      "date": "30.05.2019 16:49:10",
+      "date": "2019-07-01T11:12:25.501Z",
       "description": "корм акана 1,8 кг",
       "id": 2
     },
@@ -59,7 +59,7 @@
       "type": "outcome",
       "amount": 6000,
       "category": 5,
-      "date": "30.05.2019 16:49:26",
+      "date": "2019-07-08T11:12:25.501Z",
       "description": "Львов",
       "id": 3
     },
@@ -67,9 +67,25 @@
       "type": "income",
       "amount": 157,
       "category": 5,
-      "date": "30.05.2019 17:05:38",
+      "date": "2019-07-06T11:12:25.501Z",
       "description": "Купон на скидку на сайте \"Добово\"",
       "id": 4
+    },
+    {
+      "type": "outcome",
+      "amount": 2300,
+      "category": 1,
+      "date": "2019-07-07T11:12:25.501Z",
+      "description": "scooter",
+      "id": 5
+    },
+    {
+      "type": "income",
+      "amount": 445,
+      "category": 1,
+      "date": "2019-07-08T11:12:25.501Z",
+      "description": "dfgdfg",
+      "id": 6
     }
   ]
 }
