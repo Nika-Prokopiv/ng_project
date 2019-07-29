@@ -1,6 +1,7 @@
 {
   "name": "home-money",
   "version": "1.0.0",
+  "description": "A course project in Angular 8",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -10,6 +11,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "start-server": "json-server --watch db.json --port 3000"
+  },
+  "repository": {
+    "url": "https://github.com/Nika-Prokopiv/ng_project.git"
   },
   "private": true,
   "dependencies": {
