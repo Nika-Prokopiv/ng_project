@@ -24,6 +24,9 @@ import { HistoryDetailComponent } from './history-page/history-detail/history-de
 import { FilterPipe } from './shared/pipes/filter.pipe';
 import {HistoryFilterComponent} from './history-page/history-filter/history-filter.component';
 import { AnimationsPageComponent } from './animations-page/animations-page.component';
+import { UnitTestsComponent } from './unit-tests/unit-tests.component';
+import { PowPipe } from './unit-tests/pow.pipe';
+import { ColorDirective } from './unit-tests/color.directive';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,10 @@ import { AnimationsPageComponent } from './animations-page/animations-page.compo
     HistoryDetailComponent,
     HistoryFilterComponent,
     FilterPipe,
-    AnimationsPageComponent
+    AnimationsPageComponent,
+    UnitTestsComponent,
+    PowPipe,
+    ColorDirective
   ],
   imports: [
     CommonModule,
